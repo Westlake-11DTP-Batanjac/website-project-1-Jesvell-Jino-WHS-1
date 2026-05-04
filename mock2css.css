@@ -1,3 +1,7 @@
 #fetus {
     display: flex;
 }
+
+img {
+    width: 800px;
+}
