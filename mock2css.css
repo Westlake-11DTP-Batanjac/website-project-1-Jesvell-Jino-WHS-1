@@ -1,7 +1,36 @@
 #fetus {
     display: flex;
+    flex-wrap: wrap;
+
 }
 
-img {
-    width: 800px;
+.fetusimage {
+    width: 50%;
+}
+
+.fetustext {
+    background-color: chartreuse;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    font-size: xx-large;
+}
+
+.headerimg {
+    align-self: center;
+    height: 100px;
+    width: 100px;
+    margin-left: 50px;
+}
+
+.headertext {
+    align-self: center;
+    margin-left: 500px;
+}
+
+header {
+    height: 200px;
+    display: flex;
+    background-color: brown;
 }

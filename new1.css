@@ -1,0 +1,20 @@
+header {
+    height: 150px;
+    width: auto;
+    background-color: salmon;
+    display: flex;
+    padding: 5px;
+
+}
+
+#logo {
+    margin: 15px;
+    align-self: center;
+    height: 120px;  
+    width: 120px;
+    border-radius: 20px;
+}
+
+.header {
+    justify-self: center;
+}
