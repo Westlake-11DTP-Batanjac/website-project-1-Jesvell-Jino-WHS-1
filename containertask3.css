@@ -1,0 +1,208 @@
+ /* Base setup */ 
+
+body { 
+
+    margin: 0; 
+
+    padding: 0; 
+
+    font-family: 'Segoe UI', sans-serif; 
+
+    color: white; /* TASK: All text must be white as per diagram */ 
+
+} 
+
+  
+
+/* 1. LAYOUT STACK:  
+
+   HINT: Use 'flex-direction' to stack the 4 main sections vertically. */ 
+
+.page-container { 
+
+    height: 850px;  
+
+    display: flex;
+
+    flex-direction: column;
+
+} 
+
+  
+
+/* 2. HEADER:  
+
+   HINT: Use 'align-items' to center the logo and title vertically in the pink bar. */ 
+
+header { 
+
+    background-color: #ffadad;  
+
+    padding: 15px 30px; 
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-evenly;
+
+} 
+
+  
+
+.logo { 
+
+    background-color: #d9d9d9;  
+
+    color: white; 
+
+    border: 1px solid #777; 
+
+    padding: 10px; 
+
+} 
+
+  
+
+/* 3. NAVIGATION:  
+
+   HINT: Use 'justify-content' to move your links to the center of the purple bar. */ 
+
+nav { 
+
+    background-color: #a442a4;  
+
+} 
+
+  
+
+nav ul { 
+
+    list-style: none; 
+
+    margin: 0; 
+
+    padding: 12px; 
+
+    display: flex;
+
+    justify-content: space-evenly;
+
+} 
+
+  
+
+nav ul li a { 
+
+    color: white; 
+
+    text-decoration: none;
+
+    display: flexbox;
+
+    justify-content: space-evenly;
+
+} 
+
+  
+
+/* 4. MAIN CONTENT:  
+
+   HINT: Use 'justify-content' to create even space between the boxes (like space-evenly). */ 
+
+.main-content { 
+
+    background-color: #e0e0e0;  
+
+    padding: 40px; 
+
+    display: flex;
+
+    justify-content: space-evenly;
+
+    align-items: center;
+
+    flex-grow: 1;  
+
+} 
+
+  
+
+#maintext { 
+
+    background-color: #b0a3a3;  
+
+    width: 300px; 
+
+    height: 400px; 
+
+    padding: 20px; 
+
+} 
+
+  
+
+#mainimg { 
+
+    background-color: #b0a3a3; 
+
+    width: 250px; 
+
+    height: 250px; 
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    /* HINT: Use both 'justify' and 'align' to center the word 'image' inside here */ 
+
+} 
+
+  
+
+/* 5. FOOTER:  
+
+   HINT: Use 'flex-direction' again to stack the text and social bar. */ 
+
+footer {
+    background-color: #b38bff;
+}
+
+footer ul {
+
+    padding: 20px; 
+
+    list-style: none; 
+
+    margin: 0; 
+
+    padding: 12px; 
+
+    display: flex;
+
+    justify-content: space-evenly;
+    
+
+} 
+
+  
+
+.social-links { 
+
+    background-color: #d9d9d9;  
+
+    color: white; 
+
+    padding: 10px 40px; 
+
+    margin-top: 10px; 
+
+    border: 1px solid #777; 
+
+} 
+
+#foot {
+    align-self: center;
+    justify-self: center;
+}
