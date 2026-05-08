@@ -205,4 +205,13 @@ footer ul {
 #foot {
     align-self: center;
     justify-self: center;
+    background-color: #b0a3a3;
+    padding: 20px 200px;
+    margin-bottom: 20px;
+    border: black 1px solid;
+}
+
+#imgmate {
+    width: 100px;
+    height: 100px;
 }
