@@ -1,0 +1,35 @@
+h1 {
+    color: white;
+}
+
+header {
+    background-color: darkslategrey;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+#headerh1 {
+    margin-left: 150px;
+}
+
+img {
+    margin: 15px;
+    width: 75px;    
+    height: 75px;
+    border-radius: 100px;
+}
+
+nav {
+    background-color: antiquewhite;
+    height: 50px;
+    display: flex;
+    align-content: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
