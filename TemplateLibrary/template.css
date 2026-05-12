@@ -81,11 +81,17 @@ footer {
     height: 150px;
     align-items: center;
     justify-content: center;
+    display: flexbox;
 }
 
 footer ul {
+    align-items: center;
     list-style: none;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     width: 100%;
+}
+
+#ul1 {
+    font-size: 30px;
 }
