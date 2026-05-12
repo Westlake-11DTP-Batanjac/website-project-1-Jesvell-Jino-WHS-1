@@ -6,12 +6,9 @@ header {
 }
 
 header h1 {
-<<<<<<< HEAD
     margin-left: 100px;
     color: white;
-=======
     margin-left: 150px;
->>>>>>> 3c8a9284ff10813c58cf26bb9b529a4c6dae2bfe
 }
 
 header ul {
@@ -78,8 +75,8 @@ nav ul {
 }
 
 footer {
+    border: rgb(51, 92, 23) 10px solid;
     display: flex;
-    margin-top: -19px;
     background-color: darkolivegreen;
     height: 150px;
     align-items: center;
