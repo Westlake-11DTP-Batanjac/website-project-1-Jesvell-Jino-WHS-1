@@ -6,8 +6,12 @@ header {
 }
 
 header h1 {
+<<<<<<< HEAD
     margin-left: 100px;
     color: white;
+=======
+    margin-left: 150px;
+>>>>>>> 3c8a9284ff10813c58cf26bb9b529a4c6dae2bfe
 }
 
 header ul {
