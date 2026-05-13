@@ -58,16 +58,14 @@ nav ul {
     border: rgb(209, 83, 10) 10px solid;
     background-color: rgb(156, 63, 9);
     width: 50%;
-    align-items: center;
+    display: flex;
     text-align: center;
+    align-items: center;
 }
 
 .MainText p {
-
-    padding-left: 10px;
-    padding-right: 10px;
     color: white;
-    font-size: 50px;
+    font-size: 52.5px;
 }
 
 .MainImage {
