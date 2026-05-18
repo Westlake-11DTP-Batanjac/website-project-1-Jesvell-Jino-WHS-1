@@ -1,0 +1,57 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-image: url('https://wallpaperaccess.com/full/7326.jpg');
+    height: 1px;
+}
+
+header {
+    top: 0;
+    position: sticky;
+    color: white;
+    height: 150px;
+    display: flex;  
+    align-items: center;
+    background:
+        linear-gradient(rgba(0,0,0,1), rgba(0,0,0,0)),
+        url("https://static.vecteezy.com/system/resources/thumbnails/036/493/646/small/ai-generated-modern-neon-design-with-hexagonal-patterns-and-electric-vibes-photo.jpg");
+}
+
+header img {
+    border: rgb(0, 0, 0) 5px solid;
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    margin-left: 20px;
+    margin-right: 100px;
+}
+
+header h1 {
+    font-size: 130px;
+    margin-left: 30px;
+    text-shadow: 10px 10px rgb(49, 49, 49, 0.5);
+}
+
+header ul {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    font-size: 50px;
+}
+
+table, th, td { 
+    border: white 1px solid;
+    color: white;
+}
+
+.Container {
+    display: flex;
+    background-color: rgba(3, 3, 46, 0.5);
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    height: 920px;
+}
