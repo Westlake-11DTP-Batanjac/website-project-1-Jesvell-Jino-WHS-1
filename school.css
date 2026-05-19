@@ -47,6 +47,32 @@ table, th, td {
     color: white;
 }
 
+th, td { 
+    padding: 10px;
+    text-align: center;
+}
+
+th { 
+    background-color: rgb(44, 6, 75); 
+    color: white; 
+} 
+
+tr:nth-child(even) { 
+    background-color: rgb(2, 64, 145); 
+} 
+
+tr:nth-child(odd) { 
+    background-color: rgb(14, 41, 92); 
+} 
+
+tr:hover { 
+    background-color: rgb(38, 50, 82); 
+} 
+
+table { 
+    border-collapse: collapse; 
+} 
+
 .Container {
     display: flex;
     background-color: rgba(3, 3, 46, 0.5);
