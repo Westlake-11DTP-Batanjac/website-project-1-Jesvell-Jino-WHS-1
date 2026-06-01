@@ -74,7 +74,7 @@ header h3 {
     display: flex;
     margin: 0px;
     background-color: rgba(42, 60, 83);
-    height: 1000px;
+    height: 1680px;
     position: relative;
     z-index: 1;
     color: white;
@@ -83,11 +83,21 @@ header h3 {
     justify-content: center;
     flex-direction: column;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    text-shadow: 0px 2.5px gray;
+    text-shadow: 0px 2.5px rgb(0, 0, 0);
 }
 
 .Main p {
     width: 70%;
+}
+
+.Main h1 {
+    margin: 0px;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 5px 3px black;
+}
+
+#six {
+    margin-right: 500px;
 }
 
 #sixseven {
@@ -98,4 +108,18 @@ header h3 {
 a, a:visited {
     color: white;
     text-decoration: none;
+}
+
+#image1 {
+    background-image:
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url("cumputereye.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1080px;
+    background-position: top;
+}
+
+#holeup {
+    border-radius: 10000px;
 }
