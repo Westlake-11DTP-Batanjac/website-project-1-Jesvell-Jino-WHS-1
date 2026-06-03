@@ -122,4 +122,6 @@ a, a:visited {
 
 #holeup {
     border-radius: 10000px;
+    outline: 10px solid rgba(0,0,0,0.5);
+    outline-offset: -10px;
 }
