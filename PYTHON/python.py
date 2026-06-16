@@ -1,11 +1,34 @@
-n, m = map(int, input().split()) # n nodes, m vertices
+import heapq
 
-graph = [[] for i in range(n)]
+# import the node, and
 
-for i in range(m):
-    u, v, w = map(int, input().split()) # u 1st node, v 2nd node, w weight
+n, m = map(int, input().split())
 
-    graph[u - 1].append((v, w))
+graph = [[] for _ in range(n + 1)]
 
-print(graph)
-    
+for _ in range(m):
+    u, v, w = map(int, input().split())
+    graph[u].append((v, w))
+    graph[v].append((u, w))  # Remove if the graph is directed
+
+start = 1
+
+dist = [float('inf')] * (n + 1)
+dist[start] = 0
+
+pq = [(0, start)]  # (distance, node)
+
+while pq:
+    current_dist, u = heapq.heappop(pq)
+
+    if current_dist > dist[u]:
+        continue
+
+    for v, weight in graph[u]:
+        new_dist = current_dist + weight
+
+        if new_dist < dist[v]:
+            dist[v] = new_dist
+            heapq.heappush(pq, (new_dist, v))
+
+print(dist[n])  # shortest distance from node 1 to node n
