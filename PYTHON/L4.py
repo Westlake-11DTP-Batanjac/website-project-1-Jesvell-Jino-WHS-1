@@ -1,11 +1,5 @@
-
-nums = map(int, input().split())
-
-cons = []
-cuts = []
-
-def consecutive(cons, index):
-    if nums[index] == (cons[-1] + 1):
-        cons.append(nums)
-for i in range(len(nums) - 1):
-    nums[i]
+int = 23412
+int = str(int)
+new = ""
+for i in range(len(int) + 1, 0, -1):
+    new += int()
