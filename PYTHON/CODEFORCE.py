@@ -24,12 +24,15 @@ for i in range(q):
                 else:
                     pass
                 # AFTERNOON
-                for i in a[x]:
-                    if (chef + i) > chef:
-                        chef = chef + i
-        print((sum % ((10 ** 9) + 7)))
+                for c in copylist[x]:
+                    if (chef + c) > chef:
+                        chef = chef + c
+                s[x] = chef
+        for x in range(l, r):
+            sum += chef
+        sum = sum % 10000000007
+        print("sum", sum)
     elif line[0] == 2:
         i, x = line[1], line[2]
-        print()
-
-print(n, a, copylist)
+        i -= 1
+        d[i] = d[i] + x
