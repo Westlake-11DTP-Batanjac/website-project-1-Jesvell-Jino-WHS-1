@@ -19,7 +19,7 @@ for i in range(q):
             for x in range(l, r): # per chefs
                 chef = s[x]
                 # MORNING
-                if (a[x] * s[x]) > chef:
+                if (a[x] * chef) > chef:
                     chef = a[x] * chef
                 else:
                     pass
@@ -27,9 +27,6 @@ for i in range(q):
                 for i in a[x]:
                     if (chef + i) > chef:
                         chef = chef + i
-            
-
-
         print((sum % ((10 ** 9) + 7)))
     elif line[0] == 2:
         i, x = line[1], line[2]
