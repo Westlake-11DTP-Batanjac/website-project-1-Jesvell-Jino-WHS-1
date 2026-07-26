@@ -1,11 +1,15 @@
 def is_prime(n):
-    n = int((n ** 0.5))
-    for i in range(1, n + 1):
-        print(i)
-        if i != 1 and i != (n + 1) and n % i == 0:
-            pass
-        else:
-            return True
-    return False
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
 
-print(is_prime(4))
+numbers = list(map(int, input().split()))
+count = 0
+for n in numbers:
+    if is_prime(n) == True:
+        count += 1
+
+print(count)
