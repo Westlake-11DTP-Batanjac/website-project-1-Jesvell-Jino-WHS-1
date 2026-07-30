@@ -10,7 +10,7 @@ for i in range(t):
             print("YES")
             passed = True
             break
-        elif i == 3:
+        elif i > 2:
             print("YES")
             passed = True
             break
