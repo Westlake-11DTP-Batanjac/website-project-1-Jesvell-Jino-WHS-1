@@ -17,5 +17,19 @@ for i in range(t):
             print("a", i, n[i])
             break
         else:
-            # make beautiful
-            # 00100 B, 10101 F, 10100 B, 01101 B, 00100 B, 00000 B, 11111 B
+            ap = [] # ap : adjacent pairs
+            apcount = 0
+            onecount = 0
+            zerocount = 0
+            for i in silly:
+                adjacentpairs = []
+                if i == "0":
+                    zerocount += 1
+                elif i == "1":
+                    onecount += 1
+                if silly[i - 1] == silly[i]:
+                    apcount += 1
+                    adjacentpairs.append((silly[i - 1], silly[i]))
+                
+            # There is at least one adjacent pair
+            # 00100 B, 10101 U, 10100 B, 01101 B, 00100 B, 00000 B, 11111 B
