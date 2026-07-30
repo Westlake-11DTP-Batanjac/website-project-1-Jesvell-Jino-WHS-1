@@ -18,4 +18,4 @@ for i in range(t):
             break
         else:
             # make beautiful
-            pass
+            # 00100 B, 10101 F, 10100 B, 01101 B, 00100 B, 00000 B, 11111 B
