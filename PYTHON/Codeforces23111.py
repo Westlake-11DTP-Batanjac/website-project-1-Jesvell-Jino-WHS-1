@@ -12,7 +12,7 @@ for i in range(t):
             break
         elif i == 3:
             print("YES")
-            passed = Trues
+            passed = True
             break
         elif i >= 2:
             higherthantwo += 1
