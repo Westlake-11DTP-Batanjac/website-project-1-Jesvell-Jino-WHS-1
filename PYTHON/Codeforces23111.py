@@ -16,5 +16,7 @@ for i in range(t):
             break
         elif i >= 2:
             higherthantwo += 1
-    if passed == False:
+    if higherthantwo >= 2:
+        print("YES")
+    elif passed == False:
         print("NO")
