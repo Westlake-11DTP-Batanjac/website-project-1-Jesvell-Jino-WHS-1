@@ -248,7 +248,8 @@ shopItems = {
     4010 : {
         "Name" : "Tax Collector",
         "Cost" : 1000,
-        "Special" : "Money"
+        "Special" : "Money",
+        "Money" : 100
     }
 }
 
