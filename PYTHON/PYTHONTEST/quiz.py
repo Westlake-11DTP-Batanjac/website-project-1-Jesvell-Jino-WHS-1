@@ -8,45 +8,70 @@ yorn = input("Do you want to erase your highscore?: ") # ask if they want to era
 if yorn.lower() == "y":
     player_stats["highscore"] = 0
 
-quiz = { # quiz data
-    "question_amount" : 5,
-    "questions" : { # question type answer multichoices
-        1 : ["What year was the sitcom Friends first aired?", "number", 1994],
-        2 : ["Is the tv show Friends a sitcom?", "truefalse", "true"],
-        3 : ["Who is the richest Friends actor?", "multi", "Jennifer Aniston", ("Jennifer Aniston", "Courteney Cox", "David Schwimmer", "Matt LeBlanc")],
-        4 : ["Which 'friend' is a clean freak?", "open", "Monica Geller"],
-        5 : ["Which two 'friends' are siblings?", "open", "Monica and Ross Geller"]
-    }
+quiz = {
+    "question_amount": 10,
+    "questions": { # question, question_type, question_answer, multi_choices
+        1 : ["How many main housemates live on the cul de sac?", "number", 6],
+        2 : ["Is the cul de sac located in a suburban neighbourhood?", "truefalse", "true"],
+        3 : ["Who is known as the biggest troublemaker on the cul de sac?", "multi", "edie", ("Edie", "Bree", "Susan", "Lynette")],
+        4 : ["What is the name of the street where the characters live?", "open", "wisteria lane"],
+        5 : ["How many children does Lynette have?", "number", 5],
+        6 : ["Is Bree known for being extremely tidy and organised?", "truefalse", "true"],
+        7 : ["Which character is a former model?", "multi", "gabrielle", ("Gabrielle", "Susan", "Bree", "Lynette")],
+        8 : ["What is the name of Susan's daughter?", "open", "julie"],
+        9 : ["Is Mike Delfino originally from Wisteria Lane?", "truefalse", "false"],
+        10 : ["Which character is married to Carlos Solis?", "multi", "gabrielle", ("Gabrielle", "Bree", "Susan", "Lynette")]
+    }   
 }
 
-
 for question_number in range(1, (quiz["question_amount"] + 1)): # loop for all the questions
-    question = quiz["questions"][question_number][0]
-    question_type = quiz["questions"][question_number][1]
-    question_answer = quiz["questions"][question_number][2]
+    question = quiz["questions"][question_number][0] # import the quiz question
+    question_type = quiz["questions"][question_number][1] # import the quiz type
+    question_answer = quiz["questions"][question_number][2] # import the quiz answer
 
-    print(question)
+    print(question) # ask the question
+    if question_type == "multi": # check if its a multi choice question to print the multi choices
+        for multichoice_choice_number in range(len(quiz["questions"][question_number][3])): # print the multi choices
+            print(str(multichoice_choice_number + 1) + ": " + quiz["questions"][question_number][3][multichoice_choice_number])
     while True:
-        answer = input("What is your answer?: ")
-        if question_type == "number":
-            try:
+        answer = input("What is your answer?: ") # ask for the answer
+        if question_type == "number": # if its a number question
+            try: # try and check if it's a number
                 if int(answer) == question_answer:
                     player_stats["score"] += 1
-            except:
+            except: # if it isnt a number ask again
                 print("Please write a number")
                 continue
-            else:
+            else: #if it's a number break
                 break
-        elif question_type == "truefalse":
-            if answer.lower() == question_answer:
+        elif question_type == "truefalse": # check if its a true or false question
+            if answer.lower() == "false" or answer.lower() == "true": # check if they said true or false
+                if answer.lower() == question_answer: # if it's correct add to the score
+                    player_stats["score"] += 1
+                    break
+            else:
+                print("It is a true or false question. Please say true or false.") # if it isnt a true or false question say this
+                continue
+        elif question_type == "multi": # check if its a multi choice question
+            if answer == question_answer: # check if it's the answer
                 player_stats["score"] += 1
                 break
-        else:
-            if answer == question_answer:
+        else: # if it isnt a multi choice, true or false, or a number question do this (open question)
+            if answer == question_answer: # check if its answer and then add 1 to score if it is.
                 player_stats["score"] += 1
                 break
         break
+    print("Your score is", player_stats["score"], "out of", question_number)
+        
 
-# save the score
+# display score
+if player_stats["score"] > player_stats["highscore"]: # check if the score is higher than the highscore
+    print("New highscore!") 
+    player_stats["highscore"] = player_stats["score"] # make the highscore the score
+print("Your highscore:", player_stats["highscore"]) # print the highscore
+# telling if they passed or not
+if player_stats["score"] >= (quiz["question_amount"] // 2):
+    print("You passed!")
+# save the score and highscore
 with open(r"PYTHON\PYTHONTEST\quiz_data.json", "w") as sfile: 
     json.dump(player_stats, sfile, indent=2)
