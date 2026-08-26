@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="GYROBOTS.css">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gyrobots</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='GYROBOTS.css') }}">
 </head>
 <body>
     <header>
@@ -16,13 +16,15 @@
     <div id="image3">
         <div id="forms">
             <h1>Sign in to the <span class="gyronetwork">GYRO-NETWORK&trade;</span></h1>
-            <form>
+            <form method="POST" action="/signin">
                 <label for="fname">First name:</label><br>
-                <input type="text"><br>
+                <input type="text" name="fname" id="fname"><br>
+
                 <label for="lname">Last name:</label><br>
-                <input type="text">
+                <input type="text" name="lname" id="lname"><br>
+
+                <input type="submit" value="Sign in">
             </form>
-            <input type="submit">
         </div>
     </div>
     <div class="fade"></div>
