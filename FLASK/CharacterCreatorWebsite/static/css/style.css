@@ -1,0 +1,14 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+h1 {
+    color: #007bff;
+}
+
+header {
+    height: 100px;
+    background-color: rgb(133, 216, 0);
+}
