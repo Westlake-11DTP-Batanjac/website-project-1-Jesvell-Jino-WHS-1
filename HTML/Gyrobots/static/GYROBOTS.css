@@ -228,3 +228,14 @@ a, a:visited {
     margin-top: 30px;
     background-color: green;
 }
+
+.subwayContainer {
+    height: 850px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    color: white;
+    background-color: #334c64;
+}
