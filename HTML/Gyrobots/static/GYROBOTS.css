@@ -231,11 +231,13 @@ a, a:visited {
 
 .subwayContainer {
     height: 850px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
     width: 100%;
     color: white;
     background-color: #334c64;
+}
+.subwayContainer div{
+    padding: 10px;
+    height: 50px;
+    width: auto;
+    background-color: rgb(38, 50, 59);
 }
