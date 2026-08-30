@@ -6,7 +6,19 @@
 </head>
 <body>
     <header>
-        <a href="templates/index.html">Main Page</a>
+        <a href="{{ url_for('start') }}">Start</a>
+        <a href="{{ url_for('aboutme') }}">About Me</a>
     </header>
+    <div class="containertype1">
+        <div class="containertype1sub1">
+            <img src="{{ url_for('static', filename='images/coollandscape.jpg') }}" alt="a cool landscape">
+        </div>
+        <div class="containertype1sub1">
+            <h1>Choose your character!</h1>
+            <form action="/createcharacter" method="POST">
+                <input type="text" name="name">
+            </form>
+        </div>
+    </div>
 </body>
 </html>

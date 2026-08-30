@@ -1,6 +1,6 @@
 import json 
 
-with open(r"PYTHON\PYTHONTEST\quiz_data.json", "r") as rfile: 
+with open(r"w\quiz_data.json", "r") as rfile: 
     player_stats = json.load(rfile) # loads the player's score
 
 player_stats["score"] = 0
@@ -41,7 +41,7 @@ for question_number in range(1, (quiz["question_amount"] + 1)): # loop for all t
         for multichoice_choice_number in range(len(quiz["questions"][question_number][3])): # print the multi choices
             print(str(multichoice_choice_number + 1) + ": " + quiz["questions"][question_number][3][multichoice_choice_number])
     while True:
-        answer = input("What is your answer?: ") # ask for the answer
+        answer = input("What is your answer?: ").strip() # ask for the answer
         if question_type == "number": # if its a number question
             try: # try and check if it's a number
                 if check_answer(question_number, int(answer)):
@@ -52,7 +52,8 @@ for question_number in range(1, (quiz["question_amount"] + 1)): # loop for all t
             else: #if it's a number break
                 break
         elif question_type == "truefalse": # check if its a true or false question
-            if answer.lower() == "false" or answer.lower() == "true": # check if they said true or false
+            answer.lower()
+            if answer == "false" or answer == "true": # check if they said true or false
                 if check_answer(question_number, answer.lower()): # if it's correct add to the score
                     player_stats["score"] += 1
                     break
@@ -75,7 +76,7 @@ for question_number in range(1, (quiz["question_amount"] + 1)): # loop for all t
                 player_stats["score"] += 1
                 break
         break
-    print("Your score is", player_stats["score"], "out of", question_number)
+    print("\nYour score is", player_stats["score"], "out of", question_number, "\n")
         
 
 # display score
@@ -86,6 +87,8 @@ print("Your highscore:", player_stats["highscore"]) # print the highscore
 # telling if they passed or not
 if player_stats["score"] >= (quiz["question_amount"] // 2):
     print("You passed!")
+else:
+    print("You failed!")
 # save the score and highscore
-with open(r"PYTHON\PYTHONTEST\quiz_data.json", "w") as sfile: 
+with open(r"w\quiz_data.json", "w") as sfile: 
     json.dump(player_stats, sfile, indent=2)
