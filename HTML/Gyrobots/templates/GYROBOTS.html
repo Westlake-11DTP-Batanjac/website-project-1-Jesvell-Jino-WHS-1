@@ -1,33 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gyrobots</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='GYROBOTS.css') }}">
+
+    <title>Gyrobots | Engineering the Future of Robots</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='gyrobots.css') }}"
+    >
 </head>
+
 <body>
-    <header>
-        <h1><a href="GYROBOTS.html">GYROBOTS</a></h1>
-        <h3><a href="cvdl.html">Computer Vision & Deep Learning</a></h3>
-        <h3><a href="mork.html">Robot Development & Models</a></h3>
-        <h2><a href="about.html">About Us</a></h2>
-    </header>
-    <div class="MainContainer">
-        <div class="SubContainer">
-            <h1>ENGINEERING THE FUTURE OF ROBOTS</h1>
-            <h1>COMPUTER VISION DEEP LEARNING ROBOT DEVELOPMENT</h1>
+
+    <!-- Website Header -->
+    <header class="site-header">
+
+        <div class="header-brand">
+            <a
+                href="{{ url_for('index') }}"
+                class="site-title"
+            >
+                GYROBOTS
+            </a>
         </div>
-    </div>
-    <div class="fade"></div>
-    <div class="Main">
-        <h1>A short summary about us</h1>
-        <p>
-            Gyrobots is a cutting-edge technology company dedicated to designing intelligent robots that make life easier and more exciting. Combining robotics, computer vision, and deep learning, we create machines that can see, learn, and adapt to their environment. Our robots can assist with everyday tasks, explore new spaces, and even interact with humans in smart, helpful ways. At Gyrobots, innovation meets imagination, and our goal is to build robots that not only work efficiently but also inspire a new era of AI-powered possibilities.
-        </p>
-        <p id="sixseven">
-            - From Jesvell and the big team
-        </p>
-    </div>
+
+
+        <!-- Main Navigation -->
+        <nav
+            class="site-navigation"
+            aria-label="Main navigation"
+        >
+
+            <a
+                href="{{ url_for('cvdl') }}"
+                class="navigation-link"
+            >
+                Computer Vision &amp; Deep Learning
+            </a>
+
+            <a
+                href="{{ url_for('mork') }}"
+                class="navigation-link"
+            >
+                Robot Development &amp; Models
+            </a>
+
+            <a
+                href="{{ url_for('about') }}"
+                class="navigation-link"
+            >
+                About Us
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- Homepage Hero -->
+    <section class="homepage-hero">
+
+        <div class="hero-content">
+
+            <h1 class="hero-title">
+                ENGINEERING THE FUTURE OF ROBOTS
+            </h1>
+
+            <p class="hero-subtitle">
+                COMPUTER VISION · DEEP LEARNING · ROBOT DEVELOPMENT
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Hero Fade -->
+    <div class="hero-fade"></div>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- About Gyrobots -->
+        <section class="about-section">
+
+            <header class="section-header">
+
+                <h2 class="section-title">
+                    A Short Summary About Us
+                </h2>
+
+            </header>
+
+
+            <div class="section-content">
+
+                <p class="section-description">
+                    Gyrobots is a cutting-edge technology company dedicated to
+                    designing intelligent robots that make life easier and more
+                    exciting. Combining robotics, computer vision, and deep
+                    learning, we create machines that can see, learn, and adapt
+                    to their environment.
+                </p>
+
+                <p class="section-description">
+                    Our robots can assist with everyday tasks, explore new
+                    spaces, and even interact with humans in smart, helpful
+                    ways. At Gyrobots, innovation meets imagination, and our
+                    goal is to build robots that not only work efficiently but
+                    also inspire a new era of AI-powered possibilities.
+                </p>
+
+
+                <!-- Team Credit -->
+                <p class="team-credit">
+                    From Jesvell and the big team
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
 </body>
+
 </html>

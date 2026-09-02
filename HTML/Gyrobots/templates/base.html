@@ -1,22 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gyrobots</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='GYROBOTS.css') }}">
+
+    <title>Gyrobots | GYRO-NETWORK</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='GYROBOTS.css') }}"
+    >
 </head>
-<body>
-    <header>
-        <h1><a href="GYROBOTS.html">GYROBOTS</a></h1>
-        <h3><a href="cvdl.html">Computer Vision & Deep Learning</a></h3>
-        <h3><a href="mork.html">Robot Development & Models</a></h3>
-        <h2><a href="about.html">About Us</a></h2>
-    </header>
-    <div class="subwayContainer">
-        <div>
-            <h1>Welcome to the <span class="gyronetwork">GYRO-NETWORK&trade;</span>  {{ fname }} {{ lname }}</h1>
+
+<body class="network-body">
+
+    <!-- Header -->
+    <header class="site-header">
+
+        <div class="header-brand">
+            <h1 class="site-title">
+                <a href="{{ url_for('index') }}">
+                    GYROBOTS
+                </a>
+            </h1>
         </div>
-    </div>
+
+        <nav class="site-navigation">
+
+            <a href="{{ url_for('cvdl') }}" class="navigation-link">
+                Computer Vision &amp; Deep Learning
+            </a>
+
+            <a href="{{ url_for('mork') }}" class="navigation-link">
+                Robot Development &amp; Models
+            </a>
+
+            <a href="{{ url_for('about') }}" class="navigation-link">
+                About Us
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- GYRO-NETWORK -->
+    <main class="network-page">
+
+        <!-- Background Grid -->
+        <div class="network-grid"></div>
+
+        <!-- Decorative Scan Line -->
+        <div class="scan-line"></div>
+
+
+        <section class="network-welcome">
+
+            <div class="network-card">
+
+                <!-- Top Status -->
+                <div class="network-status">
+
+                    <span class="status-light"></span>
+
+                    CONNECTION ESTABLISHED
+
+                </div>
+
+
+                <!-- Logo -->
+                <div class="network-logo">
+                    <span>GYRO-NETWORK</span>
+                </div>
+
+
+                <div class="network-divider"></div>
+
+
+                <!-- Welcome -->
+                <p class="welcome-small">
+                    WELCOME, OPERATIVE
+                </p>
+
+                <h1 class="welcome-title">
+                    {{ fname }} {{ lname }}
+                </h1>
+
+
+                <p class="network-description">
+                    Access to the GYRO-NETWORK has been granted.
+                    Your connection to the Gyrobots robotics system
+                    is now active.
+                </p>
+
+
+                <!-- System Information -->
+                <div class="system-info">
+
+                    <div class="system-item">
+                        <span class="system-label">SYSTEM</span>
+                        <span class="system-value">GYRO-NET</span>
+                    </div>
+
+                    <div class="system-item">
+                        <span class="system-label">STATUS</span>
+                        <span class="system-value online">ONLINE</span>
+                    </div>
+
+                    <div class="system-item">
+                        <span class="system-label">ACCESS</span>
+                        <span class="system-value">GRANTED</span>
+                    </div>
+
+                </div>
+
+
+                <!-- Button -->
+                <a
+                    href="{{ url_for('index') }}"
+                    class="network-home-button"
+                >
+                    RETURN TO GYROBOTS
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
 </body>
+
 </html>

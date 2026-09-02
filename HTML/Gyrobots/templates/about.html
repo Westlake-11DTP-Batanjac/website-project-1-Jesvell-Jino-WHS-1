@@ -1,38 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gyrobots</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='GYROBOTS.css') }}">
+
+    <title>Gyrobots | About Us</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='gyrobots.css') }}">
 </head>
+
 <body>
-    <header>
-        <h1><a href="GYROBOTS.html">GYROBOTS</a></h1>
-        <h3><a href="cvdl.html">Computer Vision & Deep Learning</a></h3>
-        <h3><a href="mork.html">Robot Development & Models</a></h3>
-        <h2><a href="about.html">About Us</a></h2>
-    </header>
-    <div id="image3">
-        <div id="forms">
-            <h1>Sign in to the <span class="gyronetwork">GYRO-NETWORK&trade;</span></h1>
-            <form method="POST" action="/signin">
-                <label for="fname">First name:</label><br>
-                <input type="text" name="fname" id="fname"><br>
 
-                <label for="lname">Last name:</label><br>
-                <input type="text" name="lname" id="lname"><br>
+    <!-- Website Header -->
+    <header class="site-header">
 
-                <input type="submit" value="Sign in">
-            </form>
+        <div class="header-brand">
+            <h1 class="site-title">
+                <a href="{{ url_for('index') }}">GYROBOTS</a>
+            </h1>
         </div>
-    </div>
-    <div class="fade"></div>
-    <div class="Main">
-        <h1 id=">About the company!"</h1>
-        <p>
-            At Gyrobots, we are passionate about pushing the boundaries of robotics and artificial intelligence to create innovative machines that make life easier, safer, and more exciting. By combining advanced robotics, computer vision, and deep learning technologies, we develop intelligent robots capable of seeing, learning, adapting, and interacting with the world around them. Inspired by the creativity of Tim Sweeney, the agility and resilience of Muhammad Ali, and the visionary engineering of Nikola Tesla, our designs blend imagination, performance, and cutting-edge technology. Our flagship model, the AMIHR, showcases this philosophy through its versatile capabilities, uniquely engineered arms, and futuristic design, delivering exceptional precision, strength, and adaptability across a wide range of tasks. At Gyrobots, we are committed to shaping the future of AI-powered robotics and inspiring the next generation of technological possibilities.
-        </p>
-    </div>
+
+        <!-- Main Navigation -->
+        <nav class="site-navigation">
+
+            <a href="{{ url_for('cvdl') }}" class="navigation-link">
+                Computer Vision &amp; Deep Learning
+            </a>
+
+            <a href="{{ url_for('mork') }}" class="navigation-link">
+                Robot Development &amp; Models
+            </a>
+
+            <a href="{{ url_for('about') }}" class="navigation-link">
+                About Us
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- GYRO-NETWORK Sign-In Section -->
+    <section class="signin-section">
+
+        <div class="signin-container">
+
+            <h1 class="signin-title">
+                Sign in to the
+                <span class="gyronetwork">
+                    GYRO-NETWORK&trade;
+                </span>
+            </h1>
+
+            <form
+                class="signin-form"
+                method="POST"
+                action="/signin"
+            >
+
+                <!-- First Name -->
+                <div class="form-group">
+                    <label for="first-name">
+                        First name:
+                    </label>
+
+                    <input
+                        type="text"
+                        name="fname"
+                        id="first-name"
+                        required
+                    >
+                </div>
+
+
+                <!-- Last Name -->
+                <div class="form-group">
+                    <label for="last-name">
+                        Last name:
+                    </label>
+
+                    <input
+                        type="text"
+                        name="lname"
+                        id="last-name"
+                        required
+                    >
+                </div>
+
+
+                <!-- Submit Button -->
+                <button type="submit" class="signin-button">
+                    Sign in
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- Fade Overlay -->
+    <div class="fade-overlay"></div>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- About Gyrobots -->
+        <section class="about-section">
+
+            <header class="section-header">
+
+                <h1 class="section-title">
+                    About Gyrobots
+                </h1>
+
+            </header>
+
+
+            <div class="section-content">
+
+                <p class="section-description">
+                    At Gyrobots, we are passionate about pushing the boundaries
+                    of robotics and artificial intelligence to create innovative
+                    machines that make life easier, safer, and more exciting.
+                    By combining advanced robotics, computer vision, and deep
+                    learning technologies, we develop intelligent robots capable
+                    of seeing, learning, adapting, and interacting with the world
+                    around them.
+                </p>
+
+                <p class="section-description">
+                    Inspired by the creativity of Tim Sweeney, the agility and
+                    resilience of Muhammad Ali, and the visionary engineering of
+                    Nikola Tesla, our designs blend imagination, performance,
+                    and cutting-edge technology.
+                </p>
+
+                <p class="section-description">
+                    Our flagship model, the AMIHR, showcases this philosophy
+                    through its versatile capabilities, uniquely engineered arms,
+                    and futuristic design, delivering exceptional precision,
+                    strength, and adaptability across a wide range of tasks.
+                </p>
+
+                <p class="section-description">
+                    At Gyrobots, we are committed to shaping the future of
+                    AI-powered robotics and inspiring the next generation of
+                    technological possibilities.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
 </body>
+
 </html>

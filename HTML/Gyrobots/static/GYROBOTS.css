@@ -1,243 +1,1058 @@
+/*GLOBAL STYLES*/
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    margin: 0px;
-    padding: 0px;
-}
-
-header {
-    background-color: #42505E;
-    display: flex;
-    height: 100px;
-    justify-content: space-around;
-    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: #2a3c53;
     color: white;
-    position: sticky;
-    top: 0;
-    z-index: 199;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-header h1 {
-    font-size: 70px;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-header h2 {
-    font-size: 45px;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-header h3 {
-    font-weight: lighter;
-}
-
-.MainContainer {
-    background-image:
-        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-        url("neoyotky.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 1080px;
-    background-position: top;
-}
-
-.SubContainer{
-    height: 200px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    width: 100%;
-    color: white;
-}
-
-.SubContainer h1 {
-    margin-top: 600px;
-    width: 600px;
-    text-shadow: 2px 2px black;
-    font-size: 50px;
-    margin-left: 50px;
-}
-
-.fade {
-    height: 300px;
-    background:
-        linear-gradient(
-            rgba(42,60,83,0),
-            rgba(42,60,83,1)
-        );
-
-    position: relative;
-    margin-top: -300px;
-    z-index: 2;
-}
-
-.Main p {
-    width: 70%;
-    text-align: center;
-}
-
-.Main h1 {
-    margin: 0px;
-    font-family: 'Times New Roman', Times, serif;
-    text-shadow: 5px 3px black;
-}
-
-#six {
-    margin-right: 500px;
-    color: aquamarine;
-    font-size: 100px;
-}
-
-#sixseven {
-    text-align: left;
-    padding-left: 20px;
-}
-
-a, a:visited {
+a,
+a:visited {
     color: white;
     text-decoration: none;
 }
 
-#image1 {
-    background-image:
-        url("cumputereye.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 1080px;
-    background-position: top;
-}
+/*WEBSITE HEADER*/
 
-#holeup {
-    border-radius: 10000px;
-    outline: 10px solid;
-    outline-color: rgba(0,0,0,0.1);
-    outline-offset: -10px;
-    box-shadow: 0 0 1000px 20px rgba(0,0,0,0.5);
-}
+.site-header {
+    background-color: #42505e;
+    min-height: 100px;
+    padding: 10px 40px;
 
-#image2 {
-    background-image:
-        url("bird.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 1080px;
-    background-position: top;
-}
-
-.Main {
     display: flex;
-    margin: 0px;
-    background:
-        linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.25)),
-        rgba(42, 60, 83);
-    height: 1500px;
-    position: relative;
-    z-index: 1;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
     color: white;
-    font-size: 50px;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    text-shadow: 0px 2.5px rgb(0, 0, 0);
 }
 
- .sidebyside {
+/* Website Logo */
+
+.header-brand {
     display: flex;
-    justify-content: space-around;
     align-items: center;
- }
+}
 
- .sidebyside img {
-    width: 42.5%;
-    height: 400px;
-    text-align: center;
-    outline: 10px solid;
-    outline-color: rgba(0,0,0,0.5);
-    outline-offset: -10px;
-    box-shadow: 0 0 15px 5px rgba(39, 102, 168, 0.5);
-    top: 2 ;
- }
+.site-title {
+    margin: 0;
+    font-size: 55px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
 
- .sidebyside p {
-    top: 3;
-    box-shadow: 0 0 15px 5px rgba(14, 109, 163, 0.5);
-    width: 42.5%;
-    height: 400px;
-    text-align: center;
-    font-size: 29px;
-    padding: 20px;
+
+/* Navigation */
+
+.site-navigation {
     display: flex;
-    justify-content: center;
     align-items: center;
-    background:
-        radial-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
-    border-radius: 150px;
-    outline: 10px solid;
-    outline-color: rgba(0,0,0,0.5);
-    outline-offset: -10px;
+    gap: 35px;
 }
 
-#image3 {
-    background-image:
-        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-        url("labarottory.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 1080px;
-    background-position: top;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#forms {
-    background:
-        radial-gradient(rgba(9, 34, 88, 1), rgba(16, 113, 138, 1));
-    height: 500px;
-    width: 700px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    color: white;
-    text-shadow: 0px 3px black;
-    border: 25px rgb(24, 64, 109) solid;
-    border-radius: 100px;
-}
-
-#forms form input {
-    padding: 5px;
-    color: black;
-    background-color: white;
-    padding-left: 10px;
-}
-
-#forms form label {
-    color: white;
-    text-shadow: 3px 3px black;
+.navigation-link {
     font-size: 20px;
+    font-weight: lighter;
+    transition: color 0.2s ease;
 }
 
-.gyronetwork {
-    color: rgb(187, 14, 14);
+.navigation-link:hover {
+    color: aquamarine;
+}
+
+/*GENERAL HERO STYLES*/
+
+.hero-fade {
+    height: 300px;
+
+    background:
+        linear-gradient(
+            rgba(42, 60, 83, 0),
+            rgba(42, 60, 83, 1)
+        );
+
+    position: relative;
+    margin-top: -300px;
+
+    z-index: 2;
+}
+
+/*HOMEPAGE HERO*/
+
+.homepage-hero {
+    height: 1080px;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        ),
+        url("neoyotky.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+
+    position: relative;
+
+    display: flex;
+    align-items: flex-end;
+}
+
+
+.hero-content {
+    width: 100%;
+    padding: 0 50px 250px;
+
+    color: white;
     text-shadow: 2px 2px black;
 }
 
-#forms input[type=submit] {
-    width: 100px;
-    margin-top: 30px;
-    background-color: green;
+
+.hero-title {
+    max-width: 900px;
+    margin: 0;
+
+    font-size: 70px;
+    line-height: 1.05;
 }
 
-.subwayContainer {
-    height: 850px;
-    width: 100%;
-    color: white;
-    background-color: #334c64;
+
+.hero-subtitle {
+    margin-top: 20px;
+
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
-.subwayContainer div{
-    padding: 10px;
-    height: 50px;
-    width: auto;
+
+
+/* ========================================
+   MAIN CONTENT
+   ======================================== */
+
+.main-content {
+    position: relative;
+    z-index: 3;
+
+    min-height: 1000px;
+    padding: 100px 50px;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.25)
+        ),
+        #2a3c53;
+
+    color: white;
+}
+
+
+/* ========================================
+   GENERAL SECTION STYLES
+   ======================================== */
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    margin: 0;
+
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 80px;
+
+    color: aquamarine;
+
+    text-shadow: 5px 3px black;
+}
+
+.section-subtitle {
+    margin: 5px 0 0;
+
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 55px;
+
+    color: white;
+
+    text-shadow: 4px 3px black;
+}
+
+
+.section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.section-description {
+    margin: 0 auto 30px;
+
+    max-width: 1000px;
+
+    font-size: 25px;
+    line-height: 1.6;
+
+    text-align: center;
+
+    text-shadow: 0 2.5px black;
+}
+
+
+/* ========================================
+   CVDL / COMPUTER VISION PAGE
+   ======================================== */
+
+.hero-section {
+    position: relative;
+}
+
+
+.hero-image {
+    height: 1080px;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.5)
+        ),
+        url("computereye.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+
+
+.computer-vision-section {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 60px;
+}
+
+
+.computer-vision-image {
+    width: 70%;
+    max-width: 900px;
+
+    border-radius: 1000px;
+
+    outline: 10px solid rgba(0, 0, 0, 0.1);
+    outline-offset: -10px;
+
+    box-shadow:
+        0 0 100px 20px rgba(0, 0, 0, 0.5);
+}
+
+
+/* ========================================
+   ROBOTICS / ROBOT MODELS PAGE
+   ======================================== */
+
+.robotics-hero {
+    position: relative;
+}
+
+
+.robotics-hero-image {
+    height: 1080px;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.5)
+        ),
+        url("bird.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+
+
+.robot-model-section {
+    max-width: 1500px;
+    margin: 0 auto 150px;
+}
+
+
+.robot-model-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 60px;
+
+    width: 100%;
+}
+
+
+.robot-model-content-reversed {
+    flex-direction: row-reverse;
+}
+
+
+/* Robot Description */
+
+.robot-description {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.robot-description .section-description {
+    width: 100%;
+    max-width: none;
+
+    min-height: 300px;
+    padding: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.5)
+        );
+
+    border-radius: 100px;
+
+    outline: 10px solid rgba(0, 0, 0, 0.5);
+    outline-offset: -10px;
+
+    box-shadow:
+        0 0 15px 5px rgba(14, 109, 163, 0.5);
+
+    font-size: 24px;
+}
+
+
+/* Robot Images */
+
+.robot-image-container {
+    flex: 1;
+
+    margin: 0;
+}
+
+
+.robot-model-image {
+    width: 100%;
+    height: 400px;
+
+    object-fit: cover;
+
+    outline: 10px solid rgba(0, 0, 0, 0.5);
+    outline-offset: -10px;
+
+    box-shadow:
+        0 0 15px 5px rgba(39, 102, 168, 0.5);
+}
+
+
+/* ========================================
+   ABOUT / SIGN-IN PAGE
+   ======================================== */
+
+.signin-section {
+    min-height: 1080px;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        ),
+        url("labarottory.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Sign-In Box */
+
+.signin-container {
+    min-height: 500px;
+    width: 700px;
+
+    padding: 50px;
+
+    background:
+        radial-gradient(
+            rgba(9, 34, 88, 1),
+            rgba(16, 113, 138, 1)
+        );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    color: white;
+
+    text-shadow: 0 3px black;
+
+    border: 25px solid rgb(24, 64, 109);
+    border-radius: 100px;
+
+    box-shadow:
+        0 0 40px rgba(0, 0, 0, 0.6);
+}
+
+
+.signin-title {
+    margin-bottom: 40px;
+
+    text-align: center;
+
+    font-size: 35px;
+}
+
+
+/* Sign-In Form */
+
+.signin-form {
+    width: 100%;
+    max-width: 400px;
+}
+
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: white;
+
+    font-size: 20px;
+
+    text-shadow: 3px 3px black;
+}
+
+
+.form-group input {
+    width: 100%;
+
+    padding: 12px;
+
+    color: black;
+    background-color: white;
+
+    border: none;
+    border-radius: 5px;
+
+    font-size: 18px;
+}
+
+
+/* Sign-In Button */
+
+.signin-button {
+    display: block;
+
+    width: 120px;
+
+    margin: 30px auto 0;
+
+    padding: 12px;
+
+    color: white;
+    background-color: green;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.signin-button:hover {
+    background-color: #009900;
+    transform: scale(1.05);
+}
+
+
+/* ========================================
+   GYRO-NETWORK
+   ======================================== */
+
+.gyronetwork {
+    color: rgb(187, 14, 14);
+
+    text-shadow:
+        2px 2px black;
+}
+
+
+/* ========================================
+   GYRO-NETWORK WELCOME PAGE
+   ======================================== */
+
+.network-page {
+    min-height: 850px;
+
+    background-color: #334c64;
+
+    color: white;
+}
+
+
+.network-welcome {
+    width: 100%;
+    min-height: 850px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding-top: 50px;
+}
+
+
+.welcome-container {
+    width: 100%;
+
+    padding: 20px 40px;
+
     background-color: rgb(38, 50, 59);
+
+    text-align: center;
+}
+
+
+.welcome-title {
+    margin: 0;
+
+    font-size: 50px;
+
+    text-shadow: 3px 3px black;
+}
+
+
+.user-name {
+    color: aquamarine;
+
+    white-space: nowrap;
+}
+
+
+/* ========================================
+   TEAM CREDIT
+   ======================================== */
+
+.team-credit {
+    margin-top: 50px;
+
+    padding-left: 20px;
+
+    text-align: left;
+
+    font-size: 20px;
+
+    font-style: italic;
+
+    opacity: 0.8;
+}
+
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 1000px) {
+
+    .site-header {
+        flex-direction: column;
+        gap: 15px;
+
+        padding: 20px;
+    }
+
+    .site-title {
+        font-size: 45px;
+    }
+
+    .site-navigation {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .navigation-link {
+        font-size: 16px;
+    }
+
+
+    .hero-title {
+        font-size: 50px;
+    }
+
+    .hero-subtitle {
+        font-size: 22px;
+    }
+
+
+    .section-title {
+        font-size: 60px;
+    }
+
+    .section-subtitle {
+        font-size: 40px;
+    }
+
+
+    .robot-model-content,
+    .robot-model-content-reversed {
+        flex-direction: column;
+    }
+
+    .robot-description,
+    .robot-image-container {
+        width: 100%;
+    }
+
+
+    .robot-model-image {
+        height: auto;
+        max-height: 500px;
+    }
+
+
+    .signin-container {
+        width: 90%;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .site-title {
+        font-size: 35px;
+    }
+
+    .site-navigation {
+        flex-direction: column;
+    }
+
+
+    .homepage-hero,
+    .hero-image,
+    .robotics-hero-image,
+    .signin-section {
+        height: 700px;
+    }
+
+
+    .hero-content {
+        padding: 0 25px 150px;
+    }
+
+
+    .hero-title {
+        font-size: 40px;
+    }
+
+    .hero-subtitle {
+        font-size: 18px;
+    }
+
+
+    .main-content {
+        padding: 70px 20px;
+    }
+
+
+    .section-title {
+        font-size: 45px;
+    }
+
+    .section-subtitle {
+        font-size: 32px;
+    }
+
+
+    .section-description {
+        font-size: 18px;
+    }
+
+
+    .computer-vision-image {
+        width: 95%;
+    }
+
+
+    .robot-description .section-description {
+        padding: 25px;
+
+        border-radius: 50px;
+
+        font-size: 18px;
+    }
+
+
+    .signin-container {
+        padding: 30px 20px;
+
+        border-width: 15px;
+        border-radius: 60px;
+    }
+
+
+    .signin-title {
+        font-size: 25px;
+    }
+
+
+    .welcome-title {
+        font-size: 30px;
+    }
+
+}
+
+/* ========================================
+   GYRO-NETWORK PAGE
+   ======================================== */
+
+.network-body {
+    background-color: #2a3c53;
+}
+
+
+/* Main Page */
+
+.network-page {
+    min-height: calc(100vh - 100px);
+
+    background:
+        linear-gradient(
+            rgba(42, 60, 83, 0.2),
+            rgba(20, 32, 45, 0.5)
+        );
+
+    color: white;
+}
+
+
+/* Welcome Area */
+
+.network-welcome {
+    min-height: calc(100vh - 100px);
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding-top: 120px;
+}
+
+
+/* Main Welcome Box */
+
+.network-card {
+    width: 80%;
+    max-width: 900px;
+
+    padding: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #334c64,
+            #263d52
+        );
+
+    border: 3px solid #425d73;
+    border-radius: 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Status */
+
+.network-status {
+    margin-bottom: 25px;
+
+    color: #7fffd4;
+
+    font-family: 'Courier New', monospace;
+
+    font-size: 15px;
+
+    letter-spacing: 2px;
+}
+
+
+.status-light {
+    display: inline-block;
+
+    width: 9px;
+    height: 9px;
+
+    margin-right: 8px;
+
+    border-radius: 50%;
+
+    background-color: #43e879;
+
+    box-shadow:
+        0 0 8px #43e879;
+}
+
+
+/* GYRO-NETWORK Logo */
+
+.network-logo {
+    font-family: 'Courier New', monospace;
+
+    font-size: 50px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    color: white;
+
+    text-shadow:
+        3px 3px black;
+}
+
+
+.network-logo span {
+    color: rgb(187, 14, 14);
+}
+
+
+/* Divider */
+
+.network-divider {
+    width: 60%;
+
+    height: 2px;
+
+    margin: 25px auto;
+
+    background-color: #6a849a;
+}
+
+
+/* Welcome */
+
+.welcome-small {
+    margin: 0;
+
+    color: #a8c7d9;
+
+    font-size: 16px;
+
+    letter-spacing: 3px;
+}
+
+
+.welcome-title {
+    margin: 10px 0 25px;
+
+    color: aquamarine;
+
+    font-family: 'Courier New', monospace;
+
+    font-size: 55px;
+
+    text-shadow:
+        3px 3px black;
+}
+
+
+.network-description {
+    max-width: 650px;
+
+    margin: 0 auto 35px;
+
+    color: #d5e0e8;
+
+    font-size: 19px;
+
+    line-height: 1.5;
+}
+
+
+/* System Information */
+
+.system-info {
+    display: flex;
+
+    justify-content: center;
+
+    margin: 30px auto;
+
+    background-color: rgba(0, 0, 0, 0.15);
+
+    border-radius: 10px;
+}
+
+
+.system-item {
+    flex: 1;
+
+    padding: 18px;
+
+    border-right: 1px solid #536b7e;
+}
+
+
+.system-item:last-child {
+    border-right: none;
+}
+
+
+.system-label {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #9aafbd;
+
+    font-size: 12px;
+
+    letter-spacing: 2px;
+}
+
+
+.system-value {
+    color: aquamarine;
+
+    font-family: 'Courier New', monospace;
+
+    font-weight: bold;
+}
+
+
+.system-value.online {
+    color: #43e879;
+}
+
+
+/* Return Button */
+
+.network-home-button {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 12px 25px;
+
+    background-color: #42505e;
+
+    border: 2px solid aquamarine;
+    border-radius: 8px;
+
+    color: white;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+
+.network-home-button:hover {
+    background-color: aquamarine;
+
+    color: #263d52;
+
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   MOBILE
+   ======================================== */
+
+@media (max-width: 700px) {
+
+    .network-welcome {
+        padding-top: 60px;
+    }
+
+    .network-card {
+        width: 92%;
+
+        padding: 35px 20px;
+    }
+
+    .network-logo {
+        font-size: 32px;
+    }
+
+    .welcome-title {
+        font-size: 38px;
+    }
+
+    .network-description {
+        font-size: 17px;
+    }
+
+    .system-info {
+        flex-direction: column;
+    }
+
+    .system-item {
+        border-right: none;
+
+        border-bottom: 1px solid #536b7e;
+    }
+
+    .system-item:last-child {
+        border-bottom: none;
+    }
 }
