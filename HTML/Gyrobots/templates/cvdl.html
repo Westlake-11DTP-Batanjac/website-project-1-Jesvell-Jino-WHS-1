@@ -3,25 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gyrobots</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='GYROBOTS.css') }}">
+    <title>Gyrobots | Computer Vision & Deep Learning</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='gyrobots.css') }}">
 </head>
 <body>
-    <header>
-        <h1><a href="GYROBOTS.html">GYROBOTS</a></h1>
-        <h3><a href="cvdl.html">Computer Vision & Deep Learning</a></h3>
-        <h3><a href="mork.html">Robot Development and Models</a></h3>
-        <h2><a href="about.html">About Us</a></h2>
+    <!-- Website Header -->
+    <header class="site-header">
+        <div class="header-brand">
+            <h1 class="site-title">
+                <a href="{{ url_for('index') }}">GYROBOTS</a>
+            </h1>
+        </div>
+        <!-- Main Navigation -->
+        <nav class="site-navigation">
+            <a href="{{ url_for('cvdl') }}" class="navigation-link">
+                Computer Vision &amp; Deep Learning
+            </a>
+
+            <a href="{{ url_for('mork') }}" class="navigation-link">
+                Robot Development &amp; Models
+            </a>
+
+            <a href="{{ url_for('about') }}" class="navigation-link">
+                About Us
+            </a>
+        </nav>
     </header>
-    <div id="image1"></div>
-    <div class="fade"></div>
-    <div class="Main">
-        <h1 id="six">Computer Vision</h1>
-        <h1 id="seven">& Deep Learning</h1>
-        <p>
-            Deep learning and computer vision form the backbone of autonomous perception in robotics. Computer vision algorithms extract and process visual data from the environment, while deep learning models, particularly convolution neural networks, analyze complex patterns to enable object recognition, motion prediction, and scene understanding. This synergy allows robots to interpret dynamic environments, make context-aware decisions, and execute tasks with precision—ranging from navigating cluttered spaces to interacting safely with humans and handling objects in real time.
-        </p>
-        <img src="static/computervision.jpg" id="holeup">
-    </div>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div id="hero-image" class="hero-image"></div>
+        <div class="hero-fade"></div>
+    </section>
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Computer Vision Section -->
+        <section class="computer-vision-section">
+            <header class="section-header">
+                <h1 class="section-title">
+                    Computer Vision
+                </h1>
+                <h2 class="section-subtitle">
+                    &amp; Deep Learning
+                </h2>
+            </header>
+            <!-- Description -->
+            <div class="section-content">
+                <p class="section-description">
+                    Deep learning and computer vision form the backbone of
+                    autonomous perception in robotics. Computer vision
+                    algorithms extract and process visual data from the
+                    environment, while deep learning models, particularly
+                    convolutional neural networks, analyze complex patterns
+                    to enable object recognition, motion prediction, and
+                    scene understanding.
+                </p>
+                <p class="section-description">
+                    This synergy allows robots to interpret dynamic
+                    environments, make context-aware decisions, and execute
+                    tasks with precision—ranging from navigating cluttered
+                    spaces to interacting safely with humans and handling
+                    objects in real time.
+                </p>
+            </div>
+            <!-- Computer Vision Image -->
+            <div class="image-container">
+                <img
+                    src="{{ url_for('static', filename='computervision.jpg') }}"
+                    alt="Computer vision technology used in robotics"
+                    class="computer-vision-image"
+                >
+            </div>
+        </section>
+    </main>
 </body>
 </html>
