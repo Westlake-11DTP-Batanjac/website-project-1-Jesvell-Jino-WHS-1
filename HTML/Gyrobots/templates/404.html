@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>404 | Gyrobots</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='gyrobots.css') }}"
+    >
+</head>
+
+<body>
+
+    <!-- Website Header -->
+    <header class="site-header">
+
+        <div class="header-brand">
+            <a
+                href="{{ url_for('index') }}"
+                class="site-title"
+            >
+                GYROBOTS
+            </a>
+        </div>
+
+
+        <!-- Main Navigation -->
+        <nav
+            class="site-navigation"
+            aria-label="Main navigation"
+        >
+
+            <a
+                href="{{ url_for('cvdl') }}"
+                class="navigation-link"
+            >
+                Computer Vision &amp; Deep Learning
+            </a>
+
+            <a
+                href="{{ url_for('mork') }}"
+                class="navigation-link"
+            >
+                Robot Development &amp; Models
+            </a>
+
+            <a
+                href="{{ url_for('about') }}"
+                class="navigation-link"
+            >
+                About Us
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- 404 Hero -->
+    <section class="homepage-hero">
+
+        <div class="hero-content">
+
+            <p class="hero-subtitle">
+                SYSTEM ERROR · NAVIGATION FAILURE
+            </p>
+
+            <h1 class="hero-title">
+                404
+            </h1>
+
+            <p class="hero-subtitle">
+                THIS PAGE HAS LEFT THE ROBOT FACTORY
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Hero Fade -->
+    <div class="hero-fade"></div>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <section class="about-section">
+
+            <header class="section-header">
+
+                <h2 class="section-title">
+                    TARGET NOT FOUND
+                </h2>
+
+            </header>
+
+
+            <div class="section-content">
+
+                <p class="section-description">
+                    Our robots searched everywhere, but they couldn't find
+                    the page you're looking for.
+                </p>
+
+                <p class="section-description">
+                    It may have been moved, deleted, or perhaps our navigation
+                    robot simply took a wrong turn.
+                </p>
+
+
+                <!-- Return Home -->
+                <p class="team-credit">
+                    <a
+                        href="{{ url_for('index') }}"
+                        class="navigation-link"
+                    >
+                        ← RETURN TO GYROBOTS
+                    </a>
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
