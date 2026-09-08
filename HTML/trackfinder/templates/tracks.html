@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site_name + " 2026" }}</title>
+    <link src="{{ url_for() }}">
+</head>
+<body>
+    <nav> 
+
+    <a href="{{ url_for('home') }}">Home</a> | 
+
+    <a href="{{ url_for('tracks_page') }}">Tracks</a> 
+
+    </nav>
+
+    <div id="tracks">
+
+    {% for track in tracks %} 
+
+        <p>{{ track.name }}, it is {{ track.length }}km long</p>
+
+    {% endfor %} 
+
+    </div>
+</body>
+</html>
