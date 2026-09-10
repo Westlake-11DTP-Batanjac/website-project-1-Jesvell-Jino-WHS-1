@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ site_name + " 2026" }}</title>
-    <link src="{{ url_for() }}">
 </head>
 <body>
     <nav> 
@@ -21,7 +20,15 @@
 
         <p>{{ track.name }}, it is {{ track.length }}km long</p>
 
-    {% endfor %} 
+        <p>
+        {% for i in range(track.stars) %}
+            ★
+        {% endfor %}
+        </p>
+
+        <img src="{{ track.image }}" alt="{{ track.name }}" width="200">
+
+    {% endfor %}
 
     </div>
 </body>
