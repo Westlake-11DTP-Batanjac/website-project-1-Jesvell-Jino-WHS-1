@@ -18,12 +18,13 @@
 
     {% for track in tracks %} 
 
-        <p>{{ track.name }}, it is {{ track.length }}km long</p>
-
         <p>
+        {{ track.name }}, it is {{ track.length }}km long.
+        It is rated
         {% for i in range(track.stars) %}
             ★
         {% endfor %}
+        stars.
         </p>
 
         <img src="{{ track.image }}" alt="{{ track.name }}" width="200">

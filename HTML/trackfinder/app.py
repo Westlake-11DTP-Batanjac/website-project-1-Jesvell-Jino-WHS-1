@@ -11,7 +11,9 @@ tracks = [
 
     {"name": "Karekare Falls", "length": 3.5, "grade": "Easy", "stars" : 1, "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh_5neOhsRxxV0u-2f1OmP-Gcng1qPtJ7m7KjI4zAWOw&s=10"} , 
 
-    {"name": "Hillary Trail", "length": 70.0, "grade": "Hard", "stars" : 3, "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR5jM9WZLB-Z7jrg5nzBc5lPmTswtgEh3wBeaHNb6Odw&s=10"} 
+    {"name": "Hillary Trail", "length": 70.0, "grade": "Hard", "stars" : 3, "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR5jM9WZLB-Z7jrg5nzBc5lPmTswtgEh3wBeaHNb6Odw&s=10"},
+
+    {"name" : "Puhinui Stream Forest Trail", "length" : 4.2, "grade" : "Easy", "stars" : 4, "image" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2SI7KaYYKLVnUoeC3OJG0F0D3wRiFbiP3_hAw46yNl324u1xcQtE6l7k&s=10"} 
     
     
 
