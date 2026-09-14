@@ -1,36 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site_name + " 2026" }}</title>
-</head>
-<body>
-    <nav> 
+{% extends "base.html" %} 
 
-    <a href="{{ url_for('home') }}">Home</a> | 
+{% block title %}
 
-    <a href="{{ url_for('tracks_page') }}">Tracks</a> 
+Track Finder — Tracks
 
-    </nav>
+{% endblock %} 
+
+{% block content %} 
 
     <div id="tracks">
 
-    {% for track in tracks %} 
+        {% for track in tracks %} 
 
-        <p>
-        {{ track.name }}, it is {{ track.length }}km long.
-        It is rated
-        {% for i in range(track.stars) %}
-            ★
+            <p>
+            {{ track.name }}, it is {{ track.length }}km long.
+            It is rated
+            {% for i in range(track.stars) %}
+                ★
+            {% endfor %}
+            stars.
+            </p>
+
+            <img src="{{ track.image }}" alt="{{ track.name }}" width="200">
+
         {% endfor %}
-        stars.
-        </p>
-
-        <img src="{{ track.image }}" alt="{{ track.name }}" width="200">
-
-    {% endfor %}
 
     </div>
-</body>
-</html>
+
+{% endblock %} 
