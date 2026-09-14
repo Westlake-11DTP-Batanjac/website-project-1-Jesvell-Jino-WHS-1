@@ -28,4 +28,5 @@ header h1 {
     height: 2000px;
     display: flex;
     background-color: rgb(110, 4, 4);
+    flex-direction: row;
 }

@@ -1,6 +1,6 @@
 import json 
 
-with open(r"w\quiz_data.json", "r") as rfile: 
+with open(r"quiz_data.json", "r") as rfile: 
     player_stats = json.load(rfile) # loads the player's score
 
 player_stats["score"] = 0
@@ -90,5 +90,5 @@ if player_stats["score"] >= (quiz["question_amount"] // 2):
 else:
     print("You failed!")
 # save the score and highscore
-with open(r"w\quiz_data.json", "w") as sfile: 
+with open(r"quiz_data.json", "w") as sfile: 
     json.dump(player_stats, sfile, indent=2)
