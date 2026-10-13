@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gyrobots | GYRO-NETWORK</title>
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='GYROBOTS.css') }}"
+    >
+</head>
+
+<body class="network-body">
+    <header class="site-header">
+        <div class="header-brand">
+            <a
+                href="{{ url_for('index') }}"
+                class="site-title"
+            >
+                GYROBOTS
+            </a>
+        </div>
+        <nav
+            class="site-navigation"
+            aria-label="Main navigation"
+        >
+            <a
+                href="{{ url_for('cvdl') }}"
+                class="navigation-link"
+            >
+                Computer Vision &amp; Deep Learning
+            </a>
+            <a
+                href="{{ url_for('mork') }}"
+                class="navigation-link"
+            >
+                Robot Development &amp; Models
+            </a>
+            <a
+                href="{{ url_for('about') }}"
+                class="navigation-link"
+            >
+                About Us
+            </a>
+        </nav>
+    </header>
+
+    <!--write some stuff here-->
+    <div class="chatwelcome">
+        <h1>Welcome, {{ fname }} {{ lname }}</h1>
+    </div>
+    <div class="chat">
+        {% for message in messages %}
+    </div>
+
+</body>
+
+</html>

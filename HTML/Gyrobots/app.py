@@ -1,6 +1,28 @@
 from flask import Flask, render_template, request
+import sqlite3
 
 app = Flask(__name__)
+
+database = 'messages.db'
+
+def get_db():
+    if 'db' not in g:
+        g.db = sqlite3.connect(database)
+        g.db.row_factory = sqlite3.Row  # Keeping your row factory configuration!
+    return g.db
+
+def close_db(e=None):
+    db = g.pop('db', None)
+    if db is not None:
+        db.close()
+
+def init_db():
+    db = get_db()
+    
+    # Open and execute your SQL schema script
+    with app.open_resource('schema.sql', mode='r') as f:
+        db.cursor().executescript(f.read())
+    db.commit()
 
 @app.route("/")
 def index():
@@ -29,10 +51,10 @@ def signin():
     print("Last name:", lname)
 
     return render_template(
-        "base.html",
+        "network.html",
         fname=fname,
         lname=lname
-    )
+        )
 
 # Custom 404 Error Handler
 @app.errorhandler(404)
