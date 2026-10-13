@@ -1,28 +1,44 @@
 from flask import Flask, render_template, request
 import sqlite3
 
+# conn.row_factory = sqlite3.Row
+
 app = Flask(__name__)
 
-database = 'messages.db'
+DATABASE = "messages.db"
 
 def get_db():
-    if 'db' not in g:
-        g.db = sqlite3.connect(database)
-        g.db.row_factory = sqlite3.Row  # Keeping your row factory configuration!
-    return g.db
+    conn = sqlite3.connect(DATABASE)
+    conn.row_factory = sqlite3.Row
+    return conn
 
-def close_db(e=None):
-    db = g.pop('db', None)
-    if db is not None:
-        db.close()
 
+# Create database table
 def init_db():
-    db = get_db()
+    conn = get_db()
+
+    conn.execute("PRAGMA foreign_keys = ON;")
     
-    # Open and execute your SQL schema script
-    with app.open_resource('schema.sql', mode='r') as f:
-        db.cursor().executescript(f.read())
-    db.commit()
+        conn.execute('''
+        CREATE TABLE IF NOT EXISTS profiles (
+            profile_id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            username TEXT NOT NULL,
+            password TEXT NOT NULL
+        )
+        ''')
+        conn.execute('''
+        CREATE TABLE IF NOT EXISTS messages (
+            message_id INTEGER PRIMARY KEY AUTOINCREMENT,
+            profile_id INTEGER,
+            message TEXT NOT NULL,  -- 3. FIXED: Added the missing comma here!
+            FOREIGN KEY (profile_id) REFERENCES profiles (profile_id) ON DELETE CASCADE
+        )
+        ''')
+
+    conn.commit()
+    conn.close()
+
 
 @app.route("/")
 def index():
@@ -63,4 +79,5 @@ def page_not_found(error):
     return render_template('404.html'), 404
 
 if __name__ == "__main__":
+    init_db()
     app.run(debug=True)
