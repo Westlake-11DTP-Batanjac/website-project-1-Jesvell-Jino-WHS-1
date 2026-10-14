@@ -58,7 +58,6 @@
                 method="POST"
                 action="/signin"
             >
-
                 <!-- First Name -->
                 <div class="form-group">
                     <label for="first-name">
@@ -72,8 +71,6 @@
                         required
                     >
                 </div>
-
-
                 <!-- Last Name -->
                 <div class="form-group">
                     <label for="last-name">
@@ -88,9 +85,25 @@
                     >
                 </div>
 
+                <div class="form-group">
+                    <label for="unique-name">
+                        Unique name:
+                    </label>
+
+                    <input
+                        type="text"
+                        name="uname"
+                        id="unique-name"
+                        required
+                    >
+                </div>
+
 
                 <!-- Submit Button -->
                 <button type="submit" class="signin-button">
+                    Sign in
+                </button>
+                <button type="submit" class="register-button" method="POST" actio="/register">
                     Sign in
                 </button>
 
@@ -98,11 +111,11 @@
 
         </div>
 
-    </section>
+    </section>fb
 
 
     <!-- Fade Overlay -->
-    <div class="fade-overlay"></div>
+    <div class="hero-fade"></div>
 
 
     <!-- Main Content -->

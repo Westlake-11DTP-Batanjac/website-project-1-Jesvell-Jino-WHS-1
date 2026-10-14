@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='gyrobots.css') }}"
+    >
+</head>
+<body>
+    <!-- Website Header -->
+    <header class="site-header">
+        <div class="header-brand">
+            <a
+                href="{{ url_for('index') }}"
+                class="site-title"
+            >
+                GYROBOTS
+            </a>
+        </div>
+        <!-- Main Navigation -->
+        <nav
+            class="site-navigation"
+            aria-label="Main navigation"
+        >
+            <a
+                href="{{ url_for('cvdl') }}"
+                class="navigation-link"
+            >
+                Computer Vision &amp; Deep Learning
+            </a>
+            <a
+                href="{{ url_for('mork') }}"
+                class="navigation-link"
+            >
+                Robot Development &amp; Models
+            </a>
+            <a
+                href="{{ url_for('about') }}"
+                class="navigation-link"
+            >
+                About Us
+            </a>
+        </nav>
+    </header>
+    <main class="main-content">
+        {% block title %}{% endblock %}
+    </main>
+</body>
+</html>
