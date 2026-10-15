@@ -38,9 +38,9 @@ def init_db():
     conn.commit()
     conn.close()
 
-def sqlCommandFetchAll(command):
+def sqlCommandFetchAll(command, parameters):
     conn = get_db()
-    return conn.execute(command).fetchall()
+    return conn.execute(command, parameters).fetchall()
 
 def sqlCommandCommit(command, parameters=()):
     conn = get_db()
@@ -72,6 +72,11 @@ def signin():
     fname = request.form["fname"]
     lname = request.form["lname"]
     uname = request.form["uname"]
+    clicked_button = request.form.get("signin")     
+    print(clicked_button)
+
+    #sqlCommandCommit("INSERT INTO profiles (uniquename, firstname, lastname)"
+    #    "VALUES (?, ?, ?)", (fname, lname, uname))
 
     print("Checking if user is inside database...")
     existing_user = sqlCommandFetchAll(
@@ -85,15 +90,13 @@ def signin():
                 "network.html",
                 fname=fname,
                 lname=lname
+                error="Register if you haven't made an account already!"
                 )
     else:
         return render_template(
-            "network.html",
+            "about.html",
             error="Invalid unique name or credentials. Please try again!"
         )
-
-@app.route("/register", methods=["POST"])
-def register():
 
 
 # Custom 404 Error Handler

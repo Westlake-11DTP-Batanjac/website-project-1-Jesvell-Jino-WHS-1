@@ -516,6 +516,35 @@ a:visited {
     transform: scale(1.05);
 }
 
+.register-button {
+    display: block;
+
+    width: px;
+
+    margin: 30px auto 0;
+
+    padding: 12px;
+
+    color: white;
+    background-color: green;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.register-button:hover {
+    background-color: #009900;
+    transform: scale(1.05);
+}
 
 /* ========================================
    GYRO-NETWORK
