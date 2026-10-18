@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-import sqlite3
+import sqlite3, time
 
 # conn.row_factory = sqlite3.Row
 
@@ -31,6 +31,7 @@ def init_db():
         message_id INTEGER PRIMARY KEY AUTOINCREMENT,
         profile_id INTEGER,
         message TEXT NOT NULL,
+        time TEXT NOT NULL,
         FOREIGN KEY (profile_id) REFERENCES profiles (profile_id) ON DELETE CASCADE
     )
     ''')
@@ -40,7 +41,9 @@ def init_db():
 
 def sqlCommandFetchAll(command, parameters):
     conn = get_db()
-    return conn.execute(command, parameters).fetchall()
+    fetched = conn.execute(command, parameters).fetchall()
+    conn.close()
+    return fetched
 
 def sqlCommandCommit(command, parameters=()):
     conn = get_db()
@@ -55,7 +58,7 @@ def index():
 
 @app.route("/about")
 def about():
-    return render_template("about.html")
+    return render_template("about.html", error="")
 
 
 @app.route("/cvdl")
@@ -78,25 +81,40 @@ def signin():
     #sqlCommandCommit("INSERT INTO profiles (uniquename, firstname, lastname)"
     #    "VALUES (?, ?, ?)", (fname, lname, uname))
 
-    print("Checking if user is inside database...")
+    if request.form.get("register"):
+        try:
+            sqlCommandCommit(
+                "INSERT INTO profiles (uniquename, firstname, lastname) VALUES (?, ?, ?)",
+                (uname, fname, lname)
+            )
+            return render_template(
+                "about.html",
+                error="Successfully Registered! Try logging in with the same credentials"
+            )
+        except sqlite3.IntegrityError:
+            return render_template(
+                "about.html",
+                error="That unique name is already taken. Please choose another."
+            )
+    # Otherwise it's the sign-in button
     existing_user = sqlCommandFetchAll(
-        "SELECT * FROM profiles WHERE uniquename = ?", 
+        "SELECT * FROM profiles WHERE uniquename = ?",
         (uname,)
     )
-
     if existing_user:
-        print("User found!")
         return render_template(
-                "network.html",
-                fname=fname,
-                lname=lname
-                error="Register if you haven't made an account already!"
-                )
+            "network.html",
+            fname=fname,
+            lname=lname,
+        )
     else:
         return render_template(
             "about.html",
             error="Invalid unique name or credentials. Please try again!"
         )
+
+
+# time.strftime("%Y-%m-%d %H:%M")
 
 
 # Custom 404 Error Handler

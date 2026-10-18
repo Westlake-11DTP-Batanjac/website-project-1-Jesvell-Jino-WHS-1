@@ -51,7 +51,10 @@
         <h1>Welcome, {{ fname }} {{ lname }}</h1>
     </div>
     <div class="chat">
-        {% for message in messages %}
+        {% for message, time, user in messages %}
+        <div class="message">
+            {{message}} {{}}
+        </div>
         {% endfor %}
     </div>
 
