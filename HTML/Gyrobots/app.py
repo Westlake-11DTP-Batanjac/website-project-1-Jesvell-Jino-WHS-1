@@ -39,15 +39,21 @@ def init_db():
     conn.commit()
     conn.close()
 
-def sqlCommandFetchAll(command, parameters):
+def sqlCommandFetchAll(command, parameters=()):
     conn = get_db()
-    fetched = conn.execute(command, parameters).fetchall()
+    if parameters:
+        fetched = conn.execute(command, parameters).fetchall()
+    else:
+        fetched = conn.execute(command).fetchall()
     conn.close()
     return fetched
 
 def sqlCommandCommit(command, parameters=()):
     conn = get_db()
-    conn.execute(command, parameters)
+    if parameters:
+        conn.execute(command)
+    else:
+        conn.execute(command, parameters)
     conn.commit() # Crucial for saving INSERT, UPDATE, or DELETE changes
     conn.close()
 
@@ -72,11 +78,10 @@ def mork():
 
 @app.route("/signin", methods=["POST"])
 def signin():
+    messages = sqlCommandFetchAll("SELECT profile_id, message, time FROM messages", ())
     fname = request.form["fname"]
     lname = request.form["lname"]
     uname = request.form["uname"]
-    clicked_button = request.form.get("signin")     
-    print(clicked_button)
 
     #sqlCommandCommit("INSERT INTO profiles (uniquename, firstname, lastname)"
     #    "VALUES (?, ?, ?)", (fname, lname, uname))
@@ -106,12 +111,33 @@ def signin():
             "network.html",
             fname=fname,
             lname=lname,
+            uname=uname,
+            messages=messages
         )
     else:
         return render_template(
             "about.html",
-            error="Invalid unique name or credentials. Please try again!"
+            error="Invalid unique name or credentials. Please try again!" 
         )
+
+@app.route("/message", methods=["GET", "POST"])
+def message():
+    posted_time = time.strftime("%Y-%m-%d %H:%M")
+    message = request.form.get("message")
+    uname = request.form.get("uname")
+    lname = request.form.get("lname")
+    fname = request.form.get("fname")
+    print(uname)
+    print(sqlCommandFetchAll("SELECT profile_id FROM profiles WHERE uniquename=?", (uname,)))
+
+    sqlCommandCommit("", ())
+
+    return render_template(
+        "Network.html",
+        uname=uname,
+        lname=lname,
+        fname=fname
+    )
 
 
 # time.strftime("%Y-%m-%d %H:%M")
