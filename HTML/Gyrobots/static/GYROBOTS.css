@@ -1127,3 +1127,89 @@ a:visited {
 .btn:hover {
     background-color: #0056b3;
 }
+
+/* Chat welcome */
+.chatwelcome {
+    text-align: center;
+    padding: 24px 0;
+    font-size: 1.4rem;
+    color: #e0e0e0;
+}
+
+/* Chat feed */
+.chat {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px;
+}
+
+.message {
+    background: #2a2a2e;
+    border: 1px solid #3f3f46;
+    border-radius: 12px;
+    padding: 14px 18px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.message h3 {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #8ab4f8;
+}
+
+.message h1 {
+    margin: 6px 0 4px;
+    font-size: 1.05rem;
+    color: #ececec;
+}
+
+.message h6 {
+    margin: 0;
+    font-size: 0.75rem;
+    color: #888;
+}
+
+/* Message composer */
+.messager {
+    max-width: 720px;
+    margin: 24px auto;
+    padding: 16px;
+    background: #232327;
+    border-radius: 12px;
+    border: 1px solid #3f3f46;
+}
+
+.messager label {
+    display: block;
+    margin-bottom: 8px;
+    color: #b8b8c0;
+    font-size: 0.9rem;
+}
+
+.messager input[type="text"] {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #4a4a52;
+    background: #1b1b1f;
+    color: #f0f0f0;
+    margin-bottom: 10px;
+}
+
+.messager button {
+    padding: 10px 22px;
+    border: none;
+    border-radius: 8px;
+    background: #4c8dff;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.messager button:hover {
+    background: #3a74d6;
+}

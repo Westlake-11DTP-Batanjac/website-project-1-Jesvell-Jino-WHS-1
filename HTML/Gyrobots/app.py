@@ -30,6 +30,7 @@ def init_db():
     CREATE TABLE IF NOT EXISTS messages (
         message_id INTEGER PRIMARY KEY AUTOINCREMENT,
         profile_id INTEGER,
+        username TEXT NOT NULL,
         message TEXT NOT NULL,
         time TEXT NOT NULL,
         FOREIGN KEY (profile_id) REFERENCES profiles (profile_id) ON DELETE CASCADE
@@ -48,12 +49,21 @@ def sqlCommandFetchAll(command, parameters=()):
     conn.close()
     return fetched
 
+def sqlCommandFetchOne(command, parameters=()):
+    conn = get_db()
+    if parameters:
+        fetched = conn.execute(command, parameters).fetchone()
+    else:
+        fetched = conn.execute(command).fetchone()
+    conn.close()
+    return fetched
+
 def sqlCommandCommit(command, parameters=()):
     conn = get_db()
     if parameters:
-        conn.execute(command)
-    else:
         conn.execute(command, parameters)
+    else:
+        conn.execute(command)
     conn.commit() # Crucial for saving INSERT, UPDATE, or DELETE changes
     conn.close()
 
@@ -122,21 +132,33 @@ def signin():
 
 @app.route("/message", methods=["GET", "POST"])
 def message():
+    print(request.form)  # shows all keys and values sent
     posted_time = time.strftime("%Y-%m-%d %H:%M")
     message = request.form.get("message")
     uname = request.form.get("uname")
     lname = request.form.get("lname")
     fname = request.form.get("fname")
-    print(uname)
-    print(sqlCommandFetchAll("SELECT profile_id FROM profiles WHERE uniquename=?", (uname,)))
+    display_name = f"{fname} {lname}".strip()
 
-    sqlCommandCommit("", ())
+    row = sqlCommandFetchOne("SELECT profile_id FROM profiles WHERE uniquename=?", (uname,))
+    profile_id = row["profile_id"] if row else None
+    
+    sqlCommandCommit(
+    "INSERT INTO messages (profile_id, username, message, time) VALUES (?, ?, ?, ?)",
+    (profile_id, display_name, message, posted_time)
+    )
 
+    if row is None:
+        return "User not found", 404
+
+    messages = [dict(row) for row in sqlCommandFetchAll("SELECT profile_id, username, message, time FROM messages", ())]
+    print(messages)
     return render_template(
         "Network.html",
         uname=uname,
         lname=lname,
-        fname=fname
+        fname=fname,
+        messages=messages
     )
 
 

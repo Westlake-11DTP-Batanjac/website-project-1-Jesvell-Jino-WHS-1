@@ -53,14 +53,14 @@
     <div class="chat">
         {% for i in messages %}
         <div class="message">
-            <h3>{{ messages.user }}</h3>
-            <h1>{{ messages.message }}</h1>
-            <h6>{{ messages.time }}</h6>
+            <h3>{{ i.username }}</h3>
+            <h1>{{ i.message }}</h1>
+            <h6>{{ i.time }}</h6>
         </div>
         {% endfor %}
     </div>
     <div class="messager">
-        <form action="message" method="POST">
+        <form action="{{ url_for('message') }}" method="POST">
             <label for="messager">
             Write your message here: 
             </label>
@@ -69,6 +69,12 @@
             name="message"
             id="messager"
             required>
+            <button type="submit">Send</button>
+
+            <input type="hidden" name="uname" value="{{ uname }}">
+            <input type="hidden" name="lname" value="{{ lname }}">
+            <input type="hidden" name="fname" value="{{ fname }}">
+
         </form>
     </div>
 
