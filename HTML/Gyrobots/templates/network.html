@@ -21,6 +21,9 @@
                 GYROBOTS
             </a>
         </div>
+        <div class="chatwelcome">
+            <h1>Welcome, {{ fname }} {{ lname }}</h1>
+        </div>
         <nav
             class="site-navigation"
             aria-label="Main navigation"
@@ -47,14 +50,10 @@
     </header>
 
     <!--write some stuff here-->
-    <div class="chatwelcome">
-        <h1>Welcome, {{ fname }} {{ lname }}</h1>
-    </div>
     <div class="chat">
         {% for i in messages %}
         <div class="message">
-            <h3>{{ i.username }}</h3>
-            <h1>{{ i.message }}</h1>
+            <h1>{{ i.username }}: {{ i.message }}</h1>
             <h6>{{ i.time }}</h6>
         </div>
         {% endfor %}

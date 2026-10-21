@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, url_for, redirect
 import sqlite3, time
 
 # conn.row_factory = sqlite3.Row
@@ -88,7 +88,7 @@ def mork():
 
 @app.route("/signin", methods=["POST"])
 def signin():
-    messages = sqlCommandFetchAll("SELECT profile_id, message, time FROM messages", ())
+    messages = [dict(row) for row in sqlCommandFetchAll("SELECT profile_id, username, message, time FROM messages", ())]
     fname = request.form["fname"]
     lname = request.form["lname"]
     uname = request.form["uname"]
@@ -132,6 +132,7 @@ def signin():
 
 @app.route("/message", methods=["GET", "POST"])
 def message():
+    
     print(request.form)  # shows all keys and values sent
     posted_time = time.strftime("%Y-%m-%d %H:%M")
     message = request.form.get("message")
@@ -152,14 +153,17 @@ def message():
         return "User not found", 404
 
     messages = [dict(row) for row in sqlCommandFetchAll("SELECT profile_id, username, message, time FROM messages", ())]
-    print(messages)
-    return render_template(
-        "Network.html",
-        uname=uname,
-        lname=lname,
-        fname=fname,
-        messages=messages
+    return redirect(url_for("network_page", uname=uname, fname=fname, lname=lname))
+
+@app.route("/network")
+def network_page():
+    uname = request.args.get("uname", "")
+    fname = request.args.get("fname", "")
+    lname = request.args.get("lname", "")
+    messages = sqlCommandFetchAll(
+        "SELECT profile_id, username, message, time FROM messages ORDER BY message_id", ()
     )
+    return render_template("Network.html", uname=uname, fname=fname, lname=lname, messages=messages)
 
 
 # time.strftime("%Y-%m-%d %H:%M")
