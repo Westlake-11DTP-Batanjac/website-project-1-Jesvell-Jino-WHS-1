@@ -53,7 +53,8 @@
     <div class="chat">
         {% for i in messages %}
         <div class="message">
-            <h1>{{ i.username }}: {{ i.message }}</h1>
+            <h6>{{ i.username }}</h6>
+            <h1>{{ i.message }}</h1>
             <h6>{{ i.time }}</h6>
         </div>
         {% endfor %}

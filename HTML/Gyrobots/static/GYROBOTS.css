@@ -585,21 +585,16 @@ a:visited {
 
 .welcome-container {
     width: 100%;
-
     padding: 20px 40px;
-
     background-color: rgb(38, 50, 59);
-
     text-align: center;
 }
 
 
 .welcome-title {
     margin: 0;
-
     font-size: 50px;
-
-    text-shadow: 3px 3px black;
+    text-shadow: 1px 1px black;
 }
 
 
@@ -1133,13 +1128,21 @@ a:visited {
     text-align: center;
     font-size: 1.4rem;
     color: #e0e0e0;
-    text-shadow: 4px 4px 4px black;
+    text-shadow: 1px 1px 1px black;
+    animation: bounce 1s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%   { transform: translateX(15px); }
+  50%  { transform: translateX(-15px); }
+  100% { transform: translateX(15px); }
 }
 
 /* Chat feed */
 .chat {
-    max-width: 720px;
+    max-width: 100%;
     margin: 0 auto;
+    margin-bottom: 170px;
     display: flex;
     flex-direction: column;
     gap: 14px;
@@ -1209,4 +1212,12 @@ a:visited {
 
 .messager button:hover {
     background: #3a74d6;
+}
+
+.foot {
+    padding: 30px;
+}
+
+.footer-content {
+    padding: 20px;
 }
